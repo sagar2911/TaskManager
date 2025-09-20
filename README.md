@@ -318,14 +318,4 @@ FRONTEND_URL=http://localhost:5173
 4. Push to the branch: `git push origin feature-name`
 5. Submit a pull request
 
-## 📝 License
-
-This project is licensed under the MIT License.
-
-## 👨‍💻 Author
-
-Created as part of an interview project demonstrating full-stack development skills.
-
----
-
 **Happy coding! 🎉**
