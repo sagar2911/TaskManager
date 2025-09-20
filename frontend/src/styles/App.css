@@ -1,0 +1,330 @@
+/* App.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark theme styles */
+.app.dark {
+  background-color: #20212c;
+  color: #ffffff;
+}
+
+.app.dark body {
+  background-color: #20212c;
+  color: #ffffff;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.app-main {
+  flex: 1;
+  margin-left: 300px;
+  padding: 2rem;
+  background: #f8f9fa;
+  transition: all 0.3s ease;
+  overflow-x: auto;
+}
+
+.app.dark .app-main {
+  background: #20212c;
+}
+
+/* Header styles for board detail */
+.board-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: #2c2c38;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.app.dark .board-header {
+  background: #2c2c38;
+}
+
+.app:not(.dark) .board-header {
+  background: #ffffff;
+  color: #2c3e50;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.board-header h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.board-header-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.board-menu-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.app:not(.dark) .board-menu-btn {
+  color: #2c3e50;
+}
+
+.board-menu-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.app:not(.dark) .board-menu-btn:hover {
+  background: rgba(44, 62, 80, 0.1);
+}
+
+/* Mobile hamburger menu */
+.mobile-menu-btn {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1001;
+  background: #635fc7;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+}
+
+.mobile-menu-btn:hover {
+  background: #5a56c7;
+  transform: translateY(-1px);
+}
+
+.app:not(.dark) .mobile-menu-btn {
+  background: #635fc7;
+  color: white;
+}
+
+.app:not(.dark) .mobile-menu-btn:hover {
+  background: #5a56c7;
+}
+
+/* Button Styles */
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-primary {
+  background: #635fc7;
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #5a56c7;
+}
+
+.app.dark .btn-primary {
+  background: #635fc7;
+}
+
+.btn-secondary {
+  background: #6c757d;
+  color: white;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: #5a6268;
+}
+
+.btn-danger {
+  background: #dc3545;
+  color: white;
+}
+
+.btn-danger:hover:not(:disabled) {
+  background: #c82333;
+}
+
+.btn-large {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+}
+
+.btn-back {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-back:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Loading and Error States */
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  gap: 1rem;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #635fc7;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.app.dark .spinner {
+  border-color: #3e3e4a;
+  border-top-color: #635fc7;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  gap: 1rem;
+  text-align: center;
+}
+
+.error h2 {
+  color: #dc3545;
+  font-size: 1.5rem;
+}
+
+.error p {
+  color: #6c757d;
+  font-size: 1rem;
+}
+
+.app.dark .error p {
+  color: #828fa3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: block;
+  }
+  
+  .app-main {
+    margin-left: 0;
+    padding: 1rem;
+    padding-top: 4rem;
+  }
+
+  .board-header {
+    padding: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .board-header h1 {
+    font-size: 1.3rem;
+  }
+
+  .board-header-actions {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+  }
+
+  .btn-large {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-main {
+    padding: 0.8rem;
+  }
+
+  .board-header {
+    padding: 0.8rem;
+  }
+
+  .board-header h1 {
+    font-size: 1.1rem;
+  }
+
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+

@@ -1,0 +1,106 @@
+/* BoardDetail.css */
+.board-detail {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #20212c;
+  color: white;
+}
+
+/* Light mode styles */
+.app:not(.dark) .board-detail {
+  background: #f8f9fa;
+  color: #2c3e50;
+}
+
+/* Kanban Board */
+.kanban-board {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  overflow-x: auto;
+  flex: 1;
+  min-height: 0;
+}
+
+/* Add Column Button */
+.add-column {
+  min-width: 280px;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 2rem;
+}
+
+.add-column-btn {
+  background: linear-gradient(180deg, rgba(130, 143, 163, 0.4) 0%, rgba(130, 143, 163, 0.1) 100%);
+  border: none;
+  color: #828fa3;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app:not(.dark) .add-column-btn {
+  background: linear-gradient(180deg, rgba(108, 117, 125, 0.2) 0%, rgba(108, 117, 125, 0.1) 100%);
+  color: #6c757d;
+}
+
+.add-column-btn:hover {
+  color: #635fc7;
+  background: linear-gradient(180deg, rgba(99, 95, 199, 0.2) 0%, rgba(99, 95, 199, 0.1) 100%);
+}
+
+.app:not(.dark) .add-column-btn:hover {
+  color: #635fc7;
+  background: linear-gradient(180deg, rgba(99, 95, 199, 0.2) 0%, rgba(99, 95, 199, 0.1) 100%);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .kanban-board {
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .add-column {
+    min-width: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .kanban-board {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .add-column {
+    min-width: auto;
+    padding-top: 1rem;
+  }
+
+  .add-column-btn {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .kanban-board {
+    padding: 0.8rem;
+  }
+
+  .add-column-btn {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+}
+
